@@ -4,10 +4,55 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>simple-calculator</title>
+    <title>Simple Calculator</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div id="app">
+
+      <div id="menu-ctn">
+        <button id="theme-toggle" data-theme="dark">Dark Mode</button>
+      </div>
+
+      <div id="display">
+        <p id="expression"></p>
+        <p id="result">0</p>
+      </div>
+
+      <div id="keypad">
+        <button data-type="func" data-action="clear">AC</button>
+        <button data-type="func" data-action="sign">+/-</button>
+        <button data-type="func" data-action="percent">%</button>
+        <button data-type="op"   data-value="÷">÷</button>
+
+        <button data-type="num" data-value="7">7</button>
+        <button data-type="num" data-value="8">8</button>
+        <button data-type="num" data-value="9">9</button>
+        <button data-type="op"  data-value="×">×</button>
+
+        <button data-type="num" data-value="4">4</button>
+        <button data-type="num" data-value="5">5</button>
+        <button data-type="num" data-value="6">6</button>
+        <button data-type="op"  data-value="-">-</button>
+
+        <button data-type="num" data-value="1">1</button>
+        <button data-type="num" data-value="2">2</button>
+        <button data-type="num" data-value="3">3</button>
+        <button data-type="op"  data-value="+">+</button>
+
+        <button data-type="num" data-value="0" class="btn-zero">0</button>
+        <button data-type="func" data-action="decimal">.</button>
+        <button data-type="equal">=</button>
+      </div>
+
+      <div id="history">
+        <div id="history-header">
+          <h2>Riwayat</h2>
+          <button id="clear-history">Hapus Semua</button>
+        </div>
+        <ul id="history-list"></ul>
+      </div>
+
+    </div>
+    <script type="module" src="/src/app.js"></script>
   </body>
 </html>
