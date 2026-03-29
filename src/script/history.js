@@ -12,12 +12,15 @@ const addHistory = (expression, result) => {
   saveHistory();
 };
 const renderHistory = (elemen) => {
-  elemen.innerHTML= historyObject.map((data) => 
+  elemen.innerHTML= historyObject.toReversed().map((data) => 
     `<li>
       <p class="title">${data.expression}</p>
-      <p>${data.result}</p>
+      <p class="result">${data.result}</p>
     </li>`
   ).join("")
+
+  if (historyObject.length === 0)
+    elemen.innerHTML = "<p>Tidak ada Riwayat</p>"
 };
 const clearHistory = () => {
   historyObject = []

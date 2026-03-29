@@ -10,6 +10,8 @@ const keypad = document.getElementById("keypad");
 const historyList = document.getElementById('history-list')
 const clearHistoryBtn = document.getElementById('clear-history')
 const toggleThemeBtn = document.getElementById('theme-toggle')
+const display = document.getElementById('display')
+
 
 //MAIN RENDER
 renderHistory(historyList)
@@ -19,7 +21,7 @@ keypad.addEventListener("click", (e) => {
   const type = e.target.dataset.type;
   const isButton = e.target.closest('button')
 
-  if (!type && isButton) return; //Stop Function
+  if (!type && !isButton) return; //Stop Function
   isButton.blur() //Clear button focus
 
   if (type === "num") {
@@ -77,6 +79,11 @@ toggleThemeBtn.addEventListener('click', ()=> {
   toggleTheme()
 })
 
+document.getElementById('history-btn').addEventListener('click',()=> {
+  document.getElementById('overlay').classList.toggle("show")
+  document.getElementById('history').classList.toggle("show")
+})
+
 function setDisplay() {
   if (calculator.getArray().length > 0)
     currExpression =
@@ -84,5 +91,4 @@ function setDisplay() {
   else if (calculator.getBuffer() !== "")
     currExpression = calculator.getBuffer();
   expression.textContent = currExpression;
-  console.log(currExpression);
 }

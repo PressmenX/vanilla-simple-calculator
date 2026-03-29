@@ -3,54 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
     <link rel="stylesheet" href="src/styles/main.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Calculator</title>
   </head>
   <body>
     <div id="app">
-      <div id="menu-ctn">
-        <button id="theme-toggle" data-theme="dark">Dark Mode</button>
+      <div id="calculator-casing">
+        <div id="menu-ctn">
+          <span class="material-symbols-outlined" id="history-btn" title="History">history</span>
+          <button id="theme-toggle" data-theme="dark">
+            <span class="material-symbols-outlined light"> light_mode </span>
+            <span class="material-symbols-outlined dark"> dark_mode </span>
+          </button>
+        </div>
+
+        <div id="display">
+          <p id="expression"></p>
+          <p id="result"></p>
+        </div>
+
+        <div id="keypad">
+          <button data-type="func" data-action="clear">AC</button>
+          <button data-type="func" data-action="sign">+/-</button>
+          <button data-type="num" data-value="%">%</button>
+          <button data-type="op" data-value="÷">÷</button>
+
+          <button data-type="num" data-value="7">7</button>
+          <button data-type="num" data-value="8">8</button>
+          <button data-type="num" data-value="9">9</button>
+          <button data-type="op" data-value="×">×</button>
+
+          <button data-type="num" data-value="4">4</button>
+          <button data-type="num" data-value="5">5</button>
+          <button data-type="num" data-value="6">6</button>
+          <button data-type="op" data-value="-">-</button>
+
+          <button data-type="num" data-value="1">1</button>
+          <button data-type="num" data-value="2">2</button>
+          <button data-type="num" data-value="3">3</button>
+          <button data-type="op" data-value="+">+</button>
+
+          <button data-type="num" data-value="0" class="btn-zero">0</button>
+          <button data-type="num" data-value=".">.</button>
+          <button data-type="equal">=</button>
+        </div>
       </div>
 
-      <div id="display">
-        <p id="expression"></p>
-        <p id="result">0</p>
-      </div>
-
-      <div id="keypad">
-        <button data-type="func" data-action="clear">AC</button>
-        <button data-type="func" data-action="sign">+/-</button>
-        <button data-type="num" data-value="%">%</button>
-        <button data-type="op" data-value="÷">÷</button>
-
-        <button data-type="num" data-value="7">7</button>
-        <button data-type="num" data-value="8">8</button>
-        <button data-type="num" data-value="9">9</button>
-        <button data-type="op" data-value="×">×</button>
-
-        <button data-type="num" data-value="4">4</button>
-        <button data-type="num" data-value="5">5</button>
-        <button data-type="num" data-value="6">6</button>
-        <button data-type="op" data-value="-">-</button>
-
-        <button data-type="num" data-value="1">1</button>
-        <button data-type="num" data-value="2">2</button>
-        <button data-type="num" data-value="3">3</button>
-        <button data-type="op" data-value="+">+</button>
-
-        <button data-type="num" data-value="0" class="btn-zero">0</button>
-        <button data-type="num" data-value=".">.</button>
-        <button data-type="equal">=</button>
-      </div>
+      <div id="overlay"></div>
 
       <div id="history">
-        <div id="history-header">
-          <h2>Riwayat</h2>
-          <button id="clear-history">Hapus Semua</button>
-        </div>
-        <ul id="history-list"></ul>
+          <h2>History</h2>
+          <ul id="history-list">
+          </ul>
+          <button id="clear-history">
+            <span class="material-symbols-outlined">delete_history</span>
+            <span>Clear All</span>
+          </button>
       </div>
+
     </div>
     <script type="module" src="/src/app.js"></script>
   </body>
