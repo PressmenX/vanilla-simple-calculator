@@ -4,11 +4,20 @@
 
 Sebuah kalkulator web sederhana yang dibangun menggunakan modul ES modern dan Vite.
 
+## Kunci Konsep
+
+- Module Pattern : menggunakan pola IIFE untuk membuat core kalkulator dan fungsinya
+- Event Delegation & Bubbling : memasang 1 Event listerner pada keypad(tombol kalkulator), jika salah satu tombol diklik akan memicu fungsinya sendiri
+- Window Event Delegation : memasang event keydown pada window dan membuat tombol memicu event klik saat menekan tombol pada keyboard
+- LocalStorage : menyimpan data history dan tema terkakhir di Local Storage
+
+
 ## Fitur
 
 - Operasi aritmatika dasar: tambah, kurang, kali, bagi
 - Dukungan persen
 - Tombol hapus (`AC`) dan ganti tanda (`+/-`)
+- Tombol yang didukung oleh keyboard
 - Riwayat perhitungan disimpan di `localStorage`
 - Toggle tema terang/gelap
 - Tampilan responsif cocok untuk demo atau portofolio
